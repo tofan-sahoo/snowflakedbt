@@ -1,14 +1,14 @@
 tasty_bytes:
   target: dev
   outputs:
-    int-dev:
+    intdev:
       type: snowflake
       account: fazzqud-uk26639
       user: TOFANSAHOO
       password: MiltonKeynesDBT6798@
       role: accountadmin
       database: tasty_bytes_dbt_db
-      schema: int-dev
+      schema: intdev
       warehouse: tasty_bytes_dbt_wh
       threads: 8
     dev:
