@@ -19,7 +19,9 @@ clean-targets: [target, dbt_modules]
 ## Models
 models:
   tasty_bytes:
+    +database: TASTY_BYTES_DBT_DB  
     staging:
       +materialized: view
     marts:
       +materialized: table
+      +schema: data_mart
