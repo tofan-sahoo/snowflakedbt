@@ -3,7 +3,7 @@ tasty_bytes:
   outputs:
     intdev:
       type: snowflake
-      account: fazzqud-uk26639
+      account: wcgtyqy-ai85766
       user: TOFANSAHOO
       password: TKSOsmSnowflakeDbtPoc26
       role: accountadmin
@@ -13,7 +13,7 @@ tasty_bytes:
       threads: 8
     dev:
       type: snowflake
-      account: fazzqud-uk26639
+      account: wcgtyqy-ai85766
       user: TOFANSAHOO
       password: TKSOsmSnowflakeDbtPoc26
       role: accountadmin

@@ -1,13 +1,25 @@
 {% macro generate_schema_name(custom_schema_name, node) -%}
 
     {%- set default_schema = target.schema -%}
-    {%- if custom_schema_name is none -%}
 
-        {{ default_schema }}
+    {%- set dev_user = target.user
+        | replace('.', '_')
+        | replace('-', '_')
+        | lower -%}
+    {%- if custom_schema_name is none -%}
+        
+        {{ log('inside custom schema none clause' ,True) }}
+
+
+         {{ default_schema }}         
+
+    {%- elif target.name == 'dev' and not custom_schema_name.lower().startswith('raw') -%}
+    
+        {{ default_schema }}_{{ dev_user}}
 
     {%- else -%}
 
-        {{ custom_schema_name | trim }}
+        {{ default_schema }}
 
     {%- endif -%}
 
