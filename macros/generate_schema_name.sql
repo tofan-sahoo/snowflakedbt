@@ -7,7 +7,7 @@
     {%- set user_name = target.user | trim | lower -%}
 
     {# 3. Production/Deployment Isolation Logic #}
-    {%- if target.name in ['prod', 'production', 'deploy'] -%}
+    {%- if target.name in ['prod', 'sit', 'ppt'] -%}
         
         {%- if custom_schema_name is none -%}
             {{ default_schema }}
