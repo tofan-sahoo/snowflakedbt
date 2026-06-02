@@ -1,25 +1,35 @@
 {% macro generate_schema_name(custom_schema_name, node) -%}
 
+    {# 1. Identify the executing environment target (e.g., dev, prod, staging) #}
     {%- set default_schema = target.schema -%}
-
-    {%- set dev_user = target.user
-        | replace('.', '_')
-        | replace('-', '_')
-        | lower -%}
-    {%- if custom_schema_name is none -%}
-        
-        {{ log('inside custom schema none clause' ,True) }}
-
-
-         {{ default_schema }}         
-
-    {%- elif target.name == 'dev' and not custom_schema_name.lower().startswith('raw') -%}
     
-        {{ default_schema }}_{{ dev_user}}
+    {# 2. Capture the currently logged-in Snowflake user and clean the string #}
+    {%- set user_name = target.user | trim | lower -%}
 
+    {# 3. Production/Deployment Isolation Logic #}
+    {%- if target.name in ['prod', 'production', 'deploy'] -%}
+        
+        {%- if custom_schema_name is none -%}
+            {{ default_schema }}
+        {%- else -%}
+            {{ custom_schema_name | trim }}
+        {%- endif -%}
+
+    {# 4. Developer / Snowsight Workspace Isolation Logic #}
     {%- else -%}
-
-        {{ default_schema }}
+        
+        {# Fallback to default schema if user variable isn't captured safely #}
+        {%- if user_name is not none and user_name != '' -%}
+            
+            {%- if custom_schema_name is none -%}
+                {{ user_name }}_dev
+            {%- else -%}
+                {{ user_name }}_dev_{{ custom_schema_name | trim }}
+            {%- endif -%}
+            
+        {%- else -%}
+            {{ default_schema }}
+        {%- endif -%}
 
     {%- endif -%}
 
