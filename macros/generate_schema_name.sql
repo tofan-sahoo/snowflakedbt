@@ -1,3 +1,5 @@
+--add the additional flag in the run dropdown option to create developer specific schemas
+--var '{"dbt_user": "tsahoo"}'
 {% macro generate_schema_name(custom_schema_name, node) -%}
 
     {# 1. Identify the executing environment target (e.g., dev, sit, ppt, prod) #}
