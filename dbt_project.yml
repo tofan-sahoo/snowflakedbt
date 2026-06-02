@@ -16,6 +16,10 @@ snapshot-paths: [snapshots]
 target-path: target
 clean-targets: [target, dbt_modules]
 
+## Variables
+vars:
+  dbt_user: "shared"
+  
 ## Models
 models:
   tasty_bytes:
