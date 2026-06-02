@@ -2,7 +2,7 @@
   
     
 
-        create or replace transient table TASTY_BYTES_DBT_DB.dev_tofansahoo.orders
+        create or replace transient table TASTY_BYTES_DBT_DB.dev.orders
          as
         (SELECT 
     oh.order_id,

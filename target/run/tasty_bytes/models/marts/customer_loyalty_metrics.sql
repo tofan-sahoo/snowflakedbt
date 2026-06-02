@@ -2,7 +2,7 @@
   
     
 
-        create or replace transient table TASTY_BYTES_DBT_DB.dev_tofansahoo.customer_loyalty_metrics
+        create or replace transient table TASTY_BYTES_DBT_DB.dev.customer_loyalty_metrics
          as
         (SELECT 
     cl.customer_id,

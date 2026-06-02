@@ -1,0 +1,965 @@
+
+
+============================== 11:05:23.248747 | 8fe40540-5f23-43dd-b761-7330f72ac587 ==============================
+[0m11:05:23.248747 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m11:05:23.249827 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': '/tmp/dbt/target/', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m11:05:23.309371 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m11:05:23.554677 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m11:05:23.979366 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m11:05:24.207777 [info ] [Dummy-1   ]: Unable to do partial parsing because profile has changed
+[0m11:05:25.978142 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:05:25.980591 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:05:26.027954 [info ] [Dummy-1   ]: Found 12 models, 50 data tests, 8 sources, 476 macros
+[0m11:05:26.031556 [info ] [Dummy-1   ]: 
+[0m11:05:26.032128 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dev')
+[0m11:05:26.032632 [info ] [Dummy-1   ]: 
+[0m11:05:26.033364 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m11:05:26.039860 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TASTY_BYTES_DBT_DB'
+[0m11:05:26.122464 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB"
+[0m11:05:26.123084 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB"} */
+show terse schemas in database TASTY_BYTES_DBT_DB
+    limit 10000
+[0m11:05:26.123548 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:05:26.752622 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.629 seconds
+[0m11:05:26.756946 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TASTY_BYTES_DBT_DB_dev'
+[0m11:05:26.771126 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_dev"
+[0m11:05:26.771788 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_dev"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m11:05:26.772313 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:05:27.510030 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.738 seconds
+[0m11:05:27.514878 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_dev"
+[0m11:05:27.515472 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_dev"} */
+show objects in TASTY_BYTES_DBT_DB.dev
+    limit 10000
+    
+;
+[0m11:05:27.642865 [debug] [ThreadPool]: SQL status: SUCCESS 12 in 0.127 seconds
+[0m11:05:27.645469 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_dev"
+[0m11:05:27.646037 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_dev"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m11:05:27.707454 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.061 seconds
+[0m11:05:27.720387 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m11:05:27.721120 [debug] [Thread-3 (]: Began running node model.tasty_bytes.raw_pos_country
+[0m11:05:27.721746 [debug] [Thread-4 (]: Began running node model.tasty_bytes.raw_pos_franchise
+[0m11:05:27.722393 [debug] [Thread-5 (]: Began running node model.tasty_bytes.raw_pos_location
+[0m11:05:27.722991 [debug] [Thread-6 (]: Began running node model.tasty_bytes.raw_pos_menu
+[0m11:05:27.723585 [debug] [Thread-7 (]: Began running node model.tasty_bytes.raw_pos_order_detail
+[0m11:05:27.724252 [info ] [Thread-2 (]: 1 of 12 START sql view model TASTY_BYTES_DBT_DB.dev.raw_customer_customer_loyalty  [RUN]
+[0m11:05:27.724900 [debug] [Thread-8 (]: Began running node model.tasty_bytes.raw_pos_order_header
+[0m11:05:27.725461 [debug] [Thread-9 (]: Began running node model.tasty_bytes.raw_pos_truck
+[0m11:05:27.726204 [info ] [Thread-3 (]: 2 of 12 START sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_country ............ [RUN]
+[0m11:05:27.726898 [info ] [Thread-4 (]: 3 of 12 START sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_franchise .......... [RUN]
+[0m11:05:27.727570 [info ] [Thread-5 (]: 4 of 12 START sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_location ........... [RUN]
+[0m11:05:27.728205 [info ] [Thread-6 (]: 5 of 12 START sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_menu ............... [RUN]
+[0m11:05:27.728934 [info ] [Thread-7 (]: 6 of 12 START sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_order_detail ....... [RUN]
+[0m11:05:27.729649 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_TASTY_BYTES_DBT_DB_dev, now model.tasty_bytes.raw_customer_customer_loyalty)
+[0m11:05:27.730313 [info ] [Thread-8 (]: 7 of 12 START sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_order_header ....... [RUN]
+[0m11:05:27.730971 [info ] [Thread-9 (]: 8 of 12 START sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_truck .............. [RUN]
+[0m11:05:27.731636 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_TASTY_BYTES_DBT_DB, now model.tasty_bytes.raw_pos_country)
+[0m11:05:27.732325 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_franchise'
+[0m11:05:27.733237 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_location'
+[0m11:05:27.733956 [debug] [Thread-6 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_menu'
+[0m11:05:27.734577 [debug] [Thread-7 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_order_detail'
+[0m11:05:27.735117 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_customer_customer_loyalty
+[0m11:05:27.735816 [debug] [Thread-8 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_order_header'
+[0m11:05:27.736475 [debug] [Thread-9 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_truck'
+[0m11:05:27.736997 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes.raw_pos_country
+[0m11:05:27.737498 [debug] [Thread-4 (]: Began compiling node model.tasty_bytes.raw_pos_franchise
+[0m11:05:27.737991 [debug] [Thread-5 (]: Began compiling node model.tasty_bytes.raw_pos_location
+[0m11:05:27.738545 [debug] [Thread-6 (]: Began compiling node model.tasty_bytes.raw_pos_menu
+[0m11:05:27.739069 [debug] [Thread-7 (]: Began compiling node model.tasty_bytes.raw_pos_order_detail
+[0m11:05:27.748148 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m11:05:27.748910 [debug] [Thread-8 (]: Began compiling node model.tasty_bytes.raw_pos_order_header
+[0m11:05:27.749481 [debug] [Thread-9 (]: Began compiling node model.tasty_bytes.raw_pos_truck
+[0m11:05:27.754298 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_country"
+[0m11:05:27.759488 [debug] [Thread-4 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_franchise"
+[0m11:05:27.766205 [debug] [Thread-5 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_location"
+[0m11:05:27.771230 [debug] [Thread-6 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_menu"
+[0m11:05:27.776284 [debug] [Thread-7 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_detail"
+[0m11:05:27.781535 [debug] [Thread-8 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_header"
+[0m11:05:27.782166 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_customer_customer_loyalty
+[0m11:05:27.787026 [debug] [Thread-9 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_truck"
+[0m11:05:27.788201 [debug] [Thread-3 (]: Began executing node model.tasty_bytes.raw_pos_country
+[0m11:05:27.789105 [debug] [Thread-4 (]: Began executing node model.tasty_bytes.raw_pos_franchise
+[0m11:05:27.789930 [debug] [Thread-5 (]: Began executing node model.tasty_bytes.raw_pos_location
+[0m11:05:27.790939 [debug] [Thread-6 (]: Began executing node model.tasty_bytes.raw_pos_menu
+[0m11:05:27.791721 [debug] [Thread-7 (]: Began executing node model.tasty_bytes.raw_pos_order_detail
+[0m11:05:27.813944 [debug] [Thread-8 (]: Began executing node model.tasty_bytes.raw_pos_order_header
+[0m11:05:27.836300 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m11:05:27.841225 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_country"
+[0m11:05:27.841870 [debug] [Thread-9 (]: Began executing node model.tasty_bytes.raw_pos_truck
+[0m11:05:27.846691 [debug] [Thread-4 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_franchise"
+[0m11:05:27.851411 [debug] [Thread-5 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_location"
+[0m11:05:27.855951 [debug] [Thread-6 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_menu"
+[0m11:05:27.861940 [debug] [Thread-7 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_order_detail"
+[0m11:05:27.866758 [debug] [Thread-8 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_order_header"
+[0m11:05:27.868393 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m11:05:27.873141 [debug] [Thread-9 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_truck"
+[0m11:05:27.874160 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes.raw_pos_country"
+[0m11:05:27.875771 [debug] [Thread-4 (]: Using snowflake connection "model.tasty_bytes.raw_pos_franchise"
+[0m11:05:27.877163 [debug] [Thread-5 (]: Using snowflake connection "model.tasty_bytes.raw_pos_location"
+[0m11:05:27.878216 [debug] [Thread-6 (]: Using snowflake connection "model.tasty_bytes.raw_pos_menu"
+[0m11:05:27.879268 [debug] [Thread-7 (]: Using snowflake connection "model.tasty_bytes.raw_pos_order_detail"
+[0m11:05:27.880088 [debug] [Thread-2 (]: On model.tasty_bytes.raw_customer_customer_loyalty: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_customer_customer_loyalty"} */
+create or replace   view TASTY_BYTES_DBT_DB.dev.raw_customer_customer_loyalty
+  
+   as (
+    select *
+from tasty_bytes_dbt_db.RAW.CUSTOMER_LOYALTY
+  );
+[0m11:05:27.881038 [debug] [Thread-8 (]: Using snowflake connection "model.tasty_bytes.raw_pos_order_header"
+[0m11:05:27.881840 [debug] [Thread-3 (]: On model.tasty_bytes.raw_pos_country: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_country"} */
+create or replace   view TASTY_BYTES_DBT_DB.dev.raw_pos_country
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.COUNTRY
+  );
+[0m11:05:27.882640 [debug] [Thread-9 (]: Using snowflake connection "model.tasty_bytes.raw_pos_truck"
+[0m11:05:27.883201 [debug] [Thread-4 (]: On model.tasty_bytes.raw_pos_franchise: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_franchise"} */
+create or replace   view TASTY_BYTES_DBT_DB.dev.raw_pos_franchise
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.FRANCHISE
+  );
+[0m11:05:27.883768 [debug] [Thread-5 (]: On model.tasty_bytes.raw_pos_location: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_location"} */
+create or replace   view TASTY_BYTES_DBT_DB.dev.raw_pos_location
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.LOCATION
+  );
+[0m11:05:27.884346 [debug] [Thread-6 (]: On model.tasty_bytes.raw_pos_menu: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_menu"} */
+create or replace   view TASTY_BYTES_DBT_DB.dev.raw_pos_menu
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.MENU
+  );
+[0m11:05:27.884921 [debug] [Thread-7 (]: On model.tasty_bytes.raw_pos_order_detail: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_order_detail"} */
+create or replace   view TASTY_BYTES_DBT_DB.dev.raw_pos_order_detail
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.ORDER_DETAIL
+  );
+[0m11:05:27.885481 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:05:27.885980 [debug] [Thread-8 (]: On model.tasty_bytes.raw_pos_order_header: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_order_header"} */
+create or replace   view TASTY_BYTES_DBT_DB.dev.raw_pos_order_header
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.ORDER_HEADER
+  );
+[0m11:05:27.886470 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m11:05:27.886974 [debug] [Thread-9 (]: On model.tasty_bytes.raw_pos_truck: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_truck"} */
+create or replace   view TASTY_BYTES_DBT_DB.dev.raw_pos_truck
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.TRUCK
+  );
+[0m11:05:27.887487 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m11:05:27.887956 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m11:05:27.888519 [debug] [Thread-6 (]: Opening a new connection, currently in state init
+[0m11:05:27.889069 [debug] [Thread-7 (]: Opening a new connection, currently in state init
+[0m11:05:27.889728 [debug] [Thread-8 (]: Opening a new connection, currently in state init
+[0m11:05:27.890419 [debug] [Thread-9 (]: Opening a new connection, currently in state init
+[0m11:05:28.707017 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.820 seconds
+[0m11:05:28.707868 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.820 seconds
+[0m11:05:28.742352 [info ] [Thread-3 (]: 2 of 12 OK created sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_country ....... [[32mSUCCESS 1[0m in 1.01s]
+[0m11:05:28.743258 [info ] [Thread-5 (]: 4 of 12 OK created sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_location ...... [[32mSUCCESS 1[0m in 1.01s]
+[0m11:05:28.744155 [debug] [Thread-3 (]: Finished running node model.tasty_bytes.raw_pos_country
+[0m11:05:28.744913 [debug] [Thread-5 (]: Finished running node model.tasty_bytes.raw_pos_location
+[0m11:05:28.778125 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.892 seconds
+[0m11:05:28.781310 [info ] [Thread-2 (]: 1 of 12 OK created sql view model TASTY_BYTES_DBT_DB.dev.raw_customer_customer_loyalty  [[32mSUCCESS 1[0m in 1.05s]
+[0m11:05:28.782123 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m11:05:28.784540 [debug] [Thread-6 (]: SQL status: SUCCESS 1 in 0.896 seconds
+[0m11:05:28.787730 [info ] [Thread-6 (]: 5 of 12 OK created sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_menu .......... [[32mSUCCESS 1[0m in 1.05s]
+[0m11:05:28.788785 [debug] [Thread-7 (]: SQL status: SUCCESS 1 in 0.900 seconds
+[0m11:05:28.789547 [debug] [Thread-8 (]: SQL status: SUCCESS 1 in 0.900 seconds
+[0m11:05:28.790308 [debug] [Thread-6 (]: Finished running node model.tasty_bytes.raw_pos_menu
+[0m11:05:28.793197 [info ] [Thread-7 (]: 6 of 12 OK created sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_order_detail .. [[32mSUCCESS 1[0m in 1.06s]
+[0m11:05:28.796119 [info ] [Thread-8 (]: 7 of 12 OK created sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_order_header .. [[32mSUCCESS 1[0m in 1.06s]
+[0m11:05:28.797300 [debug] [Thread-7 (]: Finished running node model.tasty_bytes.raw_pos_order_detail
+[0m11:05:28.798009 [debug] [Thread-8 (]: Finished running node model.tasty_bytes.raw_pos_order_header
+[0m11:05:28.799225 [debug] [Thread-3 (]: Began running node model.tasty_bytes.customer_loyalty_metrics
+[0m11:05:28.799811 [debug] [Thread-5 (]: Began running node model.tasty_bytes.sales_data_by_truck
+[0m11:05:28.800626 [info ] [Thread-3 (]: 9 of 12 START sql table model TASTY_BYTES_DBT_DB.dev.customer_loyalty_metrics .. [RUN]
+[0m11:05:28.801476 [info ] [Thread-5 (]: 10 of 12 START sql table model TASTY_BYTES_DBT_DB.dev.sales_data_by_truck ...... [RUN]
+[0m11:05:28.802399 [debug] [Thread-9 (]: SQL status: SUCCESS 1 in 0.912 seconds
+[0m11:05:28.803148 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_country, now model.tasty_bytes.customer_loyalty_metrics)
+[0m11:05:28.803848 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_location, now model.tasty_bytes.sales_data_by_truck)
+[0m11:05:28.806814 [info ] [Thread-9 (]: 8 of 12 OK created sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_truck ......... [[32mSUCCESS 1[0m in 1.07s]
+[0m11:05:28.807533 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes.customer_loyalty_metrics
+[0m11:05:28.808112 [debug] [Thread-5 (]: Began compiling node model.tasty_bytes.sales_data_by_truck
+[0m11:05:28.808905 [debug] [Thread-9 (]: Finished running node model.tasty_bytes.raw_pos_truck
+[0m11:05:28.814503 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes.customer_loyalty_metrics"
+[0m11:05:28.819919 [debug] [Thread-5 (]: Writing injected SQL for node "model.tasty_bytes.sales_data_by_truck"
+[0m11:05:28.821133 [debug] [Thread-6 (]: Began running node model.tasty_bytes.sales_metrics_by_location
+[0m11:05:28.822320 [debug] [Thread-3 (]: Began executing node model.tasty_bytes.customer_loyalty_metrics
+[0m11:05:28.823260 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.936 seconds
+[0m11:05:28.824089 [info ] [Thread-6 (]: 11 of 12 START python table model TASTY_BYTES_DBT_DB.dev.sales_metrics_by_location  [RUN]
+[0m11:05:28.824685 [debug] [Thread-5 (]: Began executing node model.tasty_bytes.sales_data_by_truck
+[0m11:05:28.852783 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes.customer_loyalty_metrics"
+[0m11:05:28.855741 [info ] [Thread-4 (]: 3 of 12 OK created sql view model TASTY_BYTES_DBT_DB.dev.raw_pos_franchise ..... [[32mSUCCESS 1[0m in 1.12s]
+[0m11:05:28.856537 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_menu, now model.tasty_bytes.sales_metrics_by_location)
+[0m11:05:28.862589 [debug] [Thread-5 (]: Writing runtime sql for node "model.tasty_bytes.sales_data_by_truck"
+[0m11:05:28.863754 [debug] [Thread-4 (]: Finished running node model.tasty_bytes.raw_pos_franchise
+[0m11:05:28.865285 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes.customer_loyalty_metrics"
+[0m11:05:28.865843 [debug] [Thread-6 (]: Began compiling node model.tasty_bytes.sales_metrics_by_location
+[0m11:05:28.868200 [debug] [Thread-5 (]: Using snowflake connection "model.tasty_bytes.sales_data_by_truck"
+[0m11:05:28.868859 [debug] [Thread-8 (]: Began running node model.tasty_bytes.orders
+[0m11:05:28.869441 [debug] [Thread-3 (]: On model.tasty_bytes.customer_loyalty_metrics: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.customer_loyalty_metrics"} */
+create or replace transient table TASTY_BYTES_DBT_DB.dev.customer_loyalty_metrics
+         as
+        (SELECT 
+    cl.customer_id,
+    cl.city,
+    cl.country,
+    cl.first_name,
+    cl.last_name,
+    cl.phone_number,
+    cl.e_mail,
+    SUM(oh.order_total) AS total_sales,
+    ARRAY_AGG(DISTINCT oh.location_id) AS visited_location_ids_array
+FROM TASTY_BYTES_DBT_DB.dev.raw_customer_customer_loyalty cl
+JOIN TASTY_BYTES_DBT_DB.dev.raw_pos_order_header oh
+ON cl.customer_id = oh.customer_id
+GROUP BY cl.customer_id, cl.city, cl.country, cl.first_name,
+cl.last_name, cl.phone_number, cl.e_mail
+        );
+[0m11:05:28.896554 [debug] [Thread-6 (]: Writing injected SQL for node "model.tasty_bytes.sales_metrics_by_location"
+[0m11:05:28.897280 [debug] [Thread-5 (]: On model.tasty_bytes.sales_data_by_truck: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.sales_data_by_truck"} */
+create or replace transient table TASTY_BYTES_DBT_DB.dev.sales_data_by_truck
+         as
+        (with order_details as (
+    select 
+        od.order_id,
+        od.menu_item_id,
+        od.quantity,
+        od.price,
+        oh.truck_id,
+        oh.order_ts,
+        m.menu_type,
+        m.truck_brand_name,
+        m.item_category
+    from TASTY_BYTES_DBT_DB.dev.raw_pos_order_detail od
+    inner join TASTY_BYTES_DBT_DB.dev.raw_pos_order_header oh on od.order_id = oh.order_id
+    inner join TASTY_BYTES_DBT_DB.dev.raw_pos_menu m on od.menu_item_id = m.menu_item_id
+)
+
+select
+    truck_brand_name,
+    menu_type,
+    item_category,
+    date_trunc('month', order_ts) as sales_month,
+    sum(quantity) as total_items_sold,
+    sum(price) as total_revenue,
+    count(distinct order_id) as total_orders
+from order_details
+where truck_brand_name is not null
+group by 1, 2, 3, 4
+order by 1, 2, 3, 4
+        );
+[0m11:05:28.898074 [info ] [Thread-8 (]: 12 of 12 START sql table model TASTY_BYTES_DBT_DB.dev.orders ................... [RUN]
+[0m11:05:28.898808 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m11:05:28.899626 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m11:05:28.900165 [debug] [Thread-6 (]: Began executing node model.tasty_bytes.sales_metrics_by_location
+[0m11:05:28.900871 [debug] [Thread-8 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_header, now model.tasty_bytes.orders)
+[0m11:05:28.908534 [debug] [Thread-6 (]: Writing runtime python for node "model.tasty_bytes.sales_metrics_by_location"
+[0m11:05:28.909263 [debug] [Thread-8 (]: Began compiling node model.tasty_bytes.orders
+[0m11:05:28.915846 [debug] [Thread-8 (]: Writing injected SQL for node "model.tasty_bytes.orders"
+[0m11:05:28.918522 [debug] [Thread-6 (]: Using snowflake connection "model.tasty_bytes.sales_metrics_by_location"
+[0m11:05:28.919830 [debug] [Thread-6 (]: On model.tasty_bytes.sales_metrics_by_location: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.sales_metrics_by_location"} */
+WITH sales_metrics_by_location__dbt_sp AS PROCEDURE ()
+
+RETURNS STRING
+LANGUAGE PYTHON
+RUNTIME_VERSION = '3.9'
+PACKAGES = ('snowflake-snowpark-python')
+
+
+
+HANDLER = 'main'
+EXECUTE AS CALLER
+AS
+$$
+
+
+
+  
+    
+    
+from snowflake.snowpark.functions import col, lit, concat, count, sum as sum_, coalesce
+
+def model(dbt, session):
+    """
+    This model demonstrates basic Snowpark transformations using dbt Python models.
+    It joins location data with trucks and aggregates metrics by location.
+    Uses raw_pos models as sources instead of tb_101 directly.
+    """
+    # Get tables using dbt's ref function to reference the raw_pos models
+    locations_df = dbt.ref('raw_pos_location')
+    trucks_df = dbt.ref('raw_pos_truck')
+    orders_df = dbt.ref('raw_pos_order_header')
+    
+    # Join locations with trucks to get truck counts by location
+    location_trucks = (
+        trucks_df
+        .join(
+            locations_df, 
+            trucks_df["PRIMARY_CITY"] == locations_df["CITY"], 
+            "inner"
+        )
+        # Use simple column names and case-insensitive approach
+        .select(
+            locations_df["LOCATION_ID"],
+            locations_df["LOCATION"],
+            locations_df["CITY"],
+            trucks_df["TRUCK_ID"]
+        )
+        .groupBy("LOCATION_ID", "LOCATION", "CITY")
+        .agg(count("TRUCK_ID").alias("TRUCK_COUNT"))
+    )
+    
+    # Join with order data to get sales metrics
+    location_metrics = (
+        orders_df
+        .join(locations_df, "LOCATION_ID", "inner")
+        .groupBy("LOCATION_ID")
+        .agg(
+            sum_("ORDER_TOTAL").alias("TOTAL_SALES"),
+            sum_("ORDER_AMOUNT").alias("TOTAL_AMOUNT"),
+            sum_("ORDER_TAX_AMOUNT").alias("TOTAL_TAX")
+        )
+    )
+    
+    # Create a more simplified final version
+    joined_df = location_trucks.join(location_metrics, "LOCATION_ID", "left")
+    
+    # Add the calculated columns after join to avoid column reference issues
+    final_df = (
+        joined_df
+        .select(
+            col("LOCATION_ID"),
+            col("LOCATION"),
+            col("CITY"),
+            col("TRUCK_COUNT"),
+            # Use coalesce instead of fillna for Column objects
+            coalesce(col("TOTAL_SALES"), lit(0)).alias("TOTAL_SALES"),
+            coalesce(col("TOTAL_AMOUNT"), lit(0)).alias("TOTAL_AMOUNT"),
+            coalesce(col("TOTAL_TAX"), lit(0)).alias("TOTAL_TAX")
+        )
+    )
+    
+    # Add the full location description as a separate step
+    final_with_desc = (
+        final_df
+        .withColumn(
+            "LOCATION_DESCRIPTION", 
+            concat(
+                col("CITY"), 
+                lit(" (Trucks: "), 
+                col("TRUCK_COUNT").cast("string"), 
+                lit(")")
+            )
+        )
+    )
+    
+    # Return the final dataframe
+    return final_with_desc
+
+
+# This part is user provided model code
+# you will need to copy the next section to run the code
+# COMMAND ----------
+# this part is dbt logic for get ref work, do not modify
+
+def ref(*args, **kwargs):
+    refs = {"raw_pos_location": "TASTY_BYTES_DBT_DB.dev.raw_pos_location", "raw_pos_order_header": "TASTY_BYTES_DBT_DB.dev.raw_pos_order_header", "raw_pos_truck": "TASTY_BYTES_DBT_DB.dev.raw_pos_truck"}
+    key = '.'.join(args)
+    version = kwargs.get("v") or kwargs.get("version")
+    if version:
+        key += f".v{version}"
+    dbt_load_df_function = kwargs.get("dbt_load_df_function")
+    return dbt_load_df_function(refs[key])
+
+
+def source(*args, dbt_load_df_function):
+    sources = {}
+    key = '.'.join(args)
+    return dbt_load_df_function(sources[key])
+
+
+config_dict = {}
+
+
+class config:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    @staticmethod
+    def get(key, default=None):
+        return config_dict.get(key, default)
+
+class this:
+    """dbt.this() or dbt.this.identifier"""
+    database = "TASTY_BYTES_DBT_DB"
+    schema = "dev"
+    identifier = "sales_metrics_by_location"
+    
+    def __repr__(self):
+        return 'TASTY_BYTES_DBT_DB.dev.sales_metrics_by_location'
+
+
+class dbtObj:
+    def __init__(self, load_df_function) -> None:
+        self.source = lambda *args: source(*args, dbt_load_df_function=load_df_function)
+        self.ref = lambda *args, **kwargs: ref(*args, **kwargs, dbt_load_df_function=load_df_function)
+        self.config = config
+        self.this = this()
+        self.is_incremental = False
+
+# COMMAND ----------
+
+
+
+def materialize(session, df, target_relation):
+    # make sure pandas exists
+    import importlib.util
+    package_name = 'pandas'
+    if importlib.util.find_spec(package_name):
+        import pandas
+        if isinstance(df, pandas.core.frame.DataFrame):
+          session.use_database(target_relation.database)
+          session.use_schema(target_relation.schema)
+          # session.write_pandas does not have overwrite function
+          df = session.createDataFrame(df)
+    
+    df.write.mode("overwrite").save_as_table('TASTY_BYTES_DBT_DB.dev.sales_metrics_by_location', table_type='transient')
+
+def main(session):
+    dbt = dbtObj(session.table)
+    df = model(dbt, session)
+    materialize(session, df, dbt.this)
+    return "OK"
+
+  
+$$
+CALL sales_metrics_by_location__dbt_sp();
+[0m11:05:28.920635 [debug] [Thread-8 (]: Began executing node model.tasty_bytes.orders
+[0m11:05:28.921487 [debug] [Thread-6 (]: Opening a new connection, currently in state init
+[0m11:05:28.926168 [debug] [Thread-8 (]: Writing runtime sql for node "model.tasty_bytes.orders"
+[0m11:05:28.928949 [debug] [Thread-8 (]: Using snowflake connection "model.tasty_bytes.orders"
+[0m11:05:28.929665 [debug] [Thread-8 (]: On model.tasty_bytes.orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.orders"} */
+create or replace transient table TASTY_BYTES_DBT_DB.dev.orders
+         as
+        (SELECT 
+    oh.order_id,
+    oh.truck_id,
+    oh.order_ts,
+    od.order_detail_id,
+    od.line_number,
+    m.truck_brand_name,
+    m.menu_type,
+    t.primary_city,
+    t.region,
+    t.country,
+    t.franchise_flag,
+    t.franchise_id,
+    f.first_name AS franchisee_first_name,
+    f.last_name AS franchisee_last_name,
+    l.location_id,
+    cl.customer_id,
+    cl.first_name,
+    cl.last_name,
+    cl.e_mail,
+    cl.phone_number,
+    cl.children_count,
+    cl.gender,
+    cl.marital_status,
+    od.menu_item_id,
+    m.menu_item_name,
+    od.quantity,
+    od.unit_price,
+    od.price,
+    oh.order_amount,
+    oh.order_tax_amount,
+    oh.order_discount_amount,
+    oh.order_total
+FROM TASTY_BYTES_DBT_DB.dev.raw_pos_order_detail od
+JOIN TASTY_BYTES_DBT_DB.dev.raw_pos_order_header oh
+    ON od.order_id = oh.order_id
+JOIN TASTY_BYTES_DBT_DB.dev.raw_pos_truck t
+    ON oh.truck_id = t.truck_id
+JOIN TASTY_BYTES_DBT_DB.dev.raw_pos_menu m
+    ON od.menu_item_id = m.menu_item_id
+JOIN TASTY_BYTES_DBT_DB.dev.raw_pos_franchise f
+    ON t.franchise_id = f.franchise_id
+JOIN TASTY_BYTES_DBT_DB.dev.raw_pos_location l
+    ON oh.location_id = l.location_id
+LEFT JOIN TASTY_BYTES_DBT_DB.dev.raw_customer_customer_loyalty cl
+    ON oh.customer_id = cl.customer_id
+        );
+[0m11:05:28.930255 [debug] [Thread-8 (]: Opening a new connection, currently in state init
+[0m11:05:33.532429 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 4.633 seconds
+[0m11:05:33.536179 [info ] [Thread-3 (]: 9 of 12 OK created sql table model TASTY_BYTES_DBT_DB.dev.customer_loyalty_metrics  [[32mSUCCESS 1[0m in 4.73s]
+[0m11:05:33.537527 [debug] [Thread-3 (]: Finished running node model.tasty_bytes.customer_loyalty_metrics
+[0m11:05:42.492757 [debug] [Thread-6 (]: SQL status: SUCCESS 1 in 13.571 seconds
+[0m11:05:42.496245 [info ] [Thread-6 (]: 11 of 12 OK created python table model TASTY_BYTES_DBT_DB.dev.sales_metrics_by_location  [[32mSUCCESS 1[0m in 13.64s]
+[0m11:05:42.497102 [debug] [Thread-6 (]: Finished running node model.tasty_bytes.sales_metrics_by_location
+[0m11:05:44.516375 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 15.617 seconds
+[0m11:05:44.520034 [info ] [Thread-5 (]: 10 of 12 OK created sql table model TASTY_BYTES_DBT_DB.dev.sales_data_by_truck . [[32mSUCCESS 1[0m in 15.72s]
+[0m11:05:44.522228 [debug] [Thread-5 (]: Finished running node model.tasty_bytes.sales_data_by_truck
+[0m11:06:03.674105 [debug] [Thread-8 (]: SQL status: SUCCESS 1 in 34.744 seconds
+[0m11:06:03.677038 [info ] [Thread-8 (]: 12 of 12 OK created sql table model TASTY_BYTES_DBT_DB.dev.orders .............. [[32mSUCCESS 1[0m in 34.78s]
+[0m11:06:03.677815 [debug] [Thread-8 (]: Finished running node model.tasty_bytes.orders
+[0m11:06:03.682419 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m11:06:03.683309 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.customer_loyalty_metrics' was properly closed.
+[0m11:06:03.683951 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_customer_customer_loyalty' was properly closed.
+[0m11:06:03.684592 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_franchise' was properly closed.
+[0m11:06:03.685073 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.sales_data_by_truck' was properly closed.
+[0m11:06:03.685489 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.sales_metrics_by_location' was properly closed.
+[0m11:06:03.685896 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_order_detail' was properly closed.
+[0m11:06:03.686306 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.orders' was properly closed.
+[0m11:06:03.686714 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_truck' was properly closed.
+[0m11:06:03.687357 [info ] [Dummy-1   ]: 
+[0m11:06:03.687885 [info ] [Dummy-1   ]: Finished running 4 table models, 8 view models in 0 hours 0 minutes and 37.65 seconds (37.65s).
+[0m11:06:03.690117 [debug] [Dummy-1   ]: Command end result
+[0m11:06:03.725955 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:06:03.728417 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:06:03.735382 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m11:06:03.735957 [info ] [Dummy-1   ]: 
+[0m11:06:03.736621 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m11:06:03.737102 [info ] [Dummy-1   ]: 
+[0m11:06:03.737566 [info ] [Dummy-1   ]: Done. PASS=12 WARN=0 ERROR=0 SKIP=0 TOTAL=12
+[0m11:06:03.739437 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 40.571953, "process_in_blocks": "0", "process_kernel_time": 0.98, "process_mem_max_rss": "532308", "process_out_blocks": "0", "process_user_time": 6.33}
+[0m11:06:03.740135 [debug] [Dummy-1   ]: Command `cli run` succeeded at 11:06:03.739852 after 40.57 seconds
+[0m11:06:03.740715 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 11:14:00.752796 | bf546e0a-a614-4653-a035-9dcd86d9dab7 ==============================
+[0m11:14:00.752796 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m11:14:00.753753 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m11:14:00.810304 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m11:14:01.044978 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m11:14:01.463092 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m11:14:01.751471 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 1 files added, 1 files changed.
+[0m11:14:01.752425 [debug] [Dummy-1   ]: Partial parsing: added file: tasty_bytes://models/marts/testmodel.sql
+[0m11:14:01.753045 [debug] [Dummy-1   ]: Partial parsing: updated file: tasty_bytes://macros/generate_schema_name.sql
+[0m11:14:01.758293 [info ] [Dummy-1   ]: Unable to do partial parsing because change detected to override macro. Starting full parse.
+[0m11:14:02.613581 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.627494 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.630905 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.634350 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.637521 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.640915 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.643871 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.646860 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.649884 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.652712 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.655651 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.658589 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.675928 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.986339 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.988879 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:02.991139 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.008594 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.018434 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.020759 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.022904 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.025069 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.027484 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.029576 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.031767 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.033778 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.035786 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.037827 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.039904 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.044227 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.046548 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.048875 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.051048 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.053148 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.058129 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.062870 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.065389 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.067654 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.076006 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.078520 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.080693 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.082756 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.087428 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.092403 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.097242 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.099725 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.101759 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.107739 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.110026 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.115969 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.118450 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.120528 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.122540 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.127085 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.129527 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.134074 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.136504 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.138843 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.140842 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.142777 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.144716 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.146654 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.152359 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.154416 [info ] [Dummy-1   ]: inside target not dev
+[0m11:14:03.477111 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:14:03.479576 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:14:03.526955 [info ] [Dummy-1   ]: Found 13 models, 50 data tests, 8 sources, 476 macros
+[0m11:14:03.530910 [info ] [Dummy-1   ]: 
+[0m11:14:03.531512 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dev')
+[0m11:14:03.531990 [info ] [Dummy-1   ]: 
+[0m11:14:03.532765 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m11:14:03.534385 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TASTY_BYTES_DBT_DB'
+[0m11:14:03.616500 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB"
+[0m11:14:03.617130 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB"} */
+show terse schemas in database TASTY_BYTES_DBT_DB
+    limit 10000
+[0m11:14:03.617656 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:14:04.257822 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.640 seconds
+[0m11:14:04.266169 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_TASTY_BYTES_DBT_DB, now list_TASTY_BYTES_DBT_DB_dev)
+[0m11:14:04.280413 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_dev"
+[0m11:14:04.280981 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_dev"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m11:14:04.281439 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:14:04.825353 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.544 seconds
+[0m11:14:04.830119 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_dev"
+[0m11:14:04.830683 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_dev"} */
+show objects in TASTY_BYTES_DBT_DB.dev
+    limit 10000
+    
+;
+[0m11:14:04.934343 [debug] [ThreadPool]: SQL status: SUCCESS 12 in 0.103 seconds
+[0m11:14:04.936795 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_dev"
+[0m11:14:04.937325 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_dev"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m11:14:05.050548 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.112 seconds
+[0m11:14:05.062834 [debug] [Thread-2 (]: Began running node model.tasty_bytes.testmodel
+[0m11:14:05.063681 [info ] [Thread-2 (]: 1 of 1 START sql table model TASTY_BYTES_DBT_DB.dev.testmodel .................. [RUN]
+[0m11:14:05.064430 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_TASTY_BYTES_DBT_DB_dev, now model.tasty_bytes.testmodel)
+[0m11:14:05.064945 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.testmodel
+[0m11:14:05.073038 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.testmodel"
+[0m11:14:05.073891 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.testmodel
+[0m11:14:05.108496 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.testmodel"
+[0m11:14:05.109643 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.testmodel"
+[0m11:14:05.110177 [debug] [Thread-2 (]: On model.tasty_bytes.testmodel: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.testmodel"} */
+create or replace transient table TASTY_BYTES_DBT_DB.dev.testmodel
+         as
+        (select 1 as test
+        );
+[0m11:14:05.110677 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:14:06.476634 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.366 seconds
+[0m11:14:06.501008 [info ] [Thread-2 (]: 1 of 1 OK created sql table model TASTY_BYTES_DBT_DB.dev.testmodel ............. [[32mSUCCESS 1[0m in 1.43s]
+[0m11:14:06.501883 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.testmodel
+[0m11:14:06.505185 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m11:14:06.505807 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.testmodel' was properly closed.
+[0m11:14:06.506363 [info ] [Dummy-1   ]: 
+[0m11:14:06.506910 [info ] [Dummy-1   ]: Finished running 1 table model in 0 hours 0 minutes and 2.97 seconds (2.97s).
+[0m11:14:06.507831 [debug] [Dummy-1   ]: Command end result
+[0m11:14:06.543858 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:14:06.546151 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:14:06.552367 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m11:14:06.552906 [info ] [Dummy-1   ]: 
+[0m11:14:06.553548 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m11:14:06.554027 [info ] [Dummy-1   ]: 
+[0m11:14:06.554514 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m11:14:06.556233 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.880097, "process_in_blocks": "0", "process_kernel_time": 0.91, "process_mem_max_rss": "520924", "process_out_blocks": "0", "process_user_time": 5.54}
+[0m11:14:06.556859 [debug] [Dummy-1   ]: Command `cli run` succeeded at 11:14:06.556610 after 5.88 seconds
+[0m11:14:06.557372 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 11:25:06.121824 | 4e49fd2a-b486-4ba8-a831-b2327bc9d264 ==============================
+[0m11:25:06.121824 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m11:25:06.122641 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/tmp/dbt/', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m11:25:06.390627 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m11:25:06.797378 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m11:25:06.995343 [info ] [Dummy-1   ]: Unable to do partial parsing because profile has changed
+[0m11:25:07.863710 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.864315 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.864812 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:07.876800 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.877375 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.877876 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:07.880865 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.881379 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.881835 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:07.884790 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.885313 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.885817 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:07.888491 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.888999 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.889461 [info ] [Dummy-1   ]: inside custom schema none
+[0m11:25:07.892217 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.892715 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.893164 [info ] [Dummy-1   ]: inside custom schema none
+[0m11:25:07.895773 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.896243 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.896685 [info ] [Dummy-1   ]: inside custom schema none
+[0m11:25:07.899401 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.899903 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.900359 [info ] [Dummy-1   ]: inside custom schema none
+[0m11:25:07.902952 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.903436 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.903895 [info ] [Dummy-1   ]: inside custom schema none
+[0m11:25:07.906469 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.906957 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.907438 [info ] [Dummy-1   ]: inside custom schema none
+[0m11:25:07.910161 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.910676 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.911126 [info ] [Dummy-1   ]: inside custom schema none
+[0m11:25:07.913710 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.914199 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.914625 [info ] [Dummy-1   ]: inside custom schema none
+[0m11:25:07.930907 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:07.931509 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:07.931964 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.221759 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.222351 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.222835 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.224951 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.225456 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.225931 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.227873 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.228379 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.228834 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.244438 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.244943 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.245380 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.253996 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.254501 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.254998 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.256963 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.257425 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.257906 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.259913 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.260414 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.260894 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.262841 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.263302 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.263745 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.265919 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.266397 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.266832 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.268794 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.269269 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.269730 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.271743 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.272259 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.272744 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.274620 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.275081 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.275517 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.277358 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.277841 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.278306 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.280222 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.280685 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.281126 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.283006 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.283495 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.283954 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.286219 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.286693 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.287138 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.289081 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.289552 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.289994 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.291844 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.292299 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.292727 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.294582 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.295055 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.295485 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.297325 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.297797 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.298241 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.302391 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.302882 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.303328 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.307291 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.307787 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.308250 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.311515 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.312052 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.312534 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.314435 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.314925 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.315389 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.322886 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.323379 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.323813 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.389686 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.390283 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.390801 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.392763 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.393283 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.393744 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.395638 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.396107 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.396551 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.400860 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.401378 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.401891 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.405843 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.406336 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.406809 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.411035 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.411555 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.412028 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.414170 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.414652 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.415101 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.416972 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.417441 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.417920 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.423100 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.423588 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.424042 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.425909 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.426398 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.426848 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.431938 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.432457 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.432959 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.434874 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.435357 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.435833 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.437731 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.438233 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.438771 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.440683 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.441178 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.441631 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.445710 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.446223 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.446692 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.448629 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.449092 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.449550 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.453618 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.454113 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.454573 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.456701 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.457213 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.457702 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.459645 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.460131 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.460607 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.462517 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.463023 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.463480 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.465362 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.465868 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.466330 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.468392 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.468908 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.469372 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.471282 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.471773 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.472207 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.477083 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.477589 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.478247 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.480252 [info ] [Dummy-1   ]: inside target dev
+[0m11:25:08.480730 [info ] [Dummy-1   ]: inside user not provided in the profile
+[0m11:25:08.481188 [info ] [Dummy-1   ]: inside custom schema has value
+[0m11:25:08.698634 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:25:08.700521 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:25:08.742514 [info ] [Dummy-1   ]: Found 13 models, 50 data tests, 8 sources, 476 macros
+[0m11:25:08.745929 [info ] [Dummy-1   ]: 
+[0m11:25:08.746452 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dev')
+[0m11:25:08.746911 [info ] [Dummy-1   ]: 
+[0m11:25:08.747618 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m11:25:08.749207 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TASTY_BYTES_DBT_DB'
+[0m11:25:08.826243 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB"
+[0m11:25:08.826797 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB"} */
+show terse schemas in database TASTY_BYTES_DBT_DB
+    limit 10000
+[0m11:25:08.827258 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:25:09.477175 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.650 seconds
+[0m11:25:09.479538 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_TASTY_BYTES_DBT_DB, now create_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart)
+[0m11:25:09.480188 [debug] [ThreadPool]: Creating schema "database: "TASTY_BYTES_DBT_DB"
+schema: "tofansahoo_dev_data_mart"
+"
+[0m11:25:09.486527 [debug] [ThreadPool]: Using snowflake connection "create_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart"
+[0m11:25:09.487034 [debug] [ThreadPool]: On create_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "create_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart"} */
+create schema if not exists TASTY_BYTES_DBT_DB.tofansahoo_dev_data_mart
+[0m11:25:09.487493 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:25:10.080243 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.593 seconds
+[0m11:25:10.087414 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart, now list_TASTY_BYTES_DBT_DB_tofansahoo_dev)
+[0m11:25:10.088605 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart'
+[0m11:25:10.100887 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_tofansahoo_dev"
+[0m11:25:10.104210 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart"
+[0m11:25:10.104704 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_tofansahoo_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_tofansahoo_dev"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m11:25:10.105164 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m11:25:10.105643 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:25:10.106076 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:25:10.984959 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.879 seconds
+[0m11:25:10.989422 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_tofansahoo_dev"
+[0m11:25:10.989965 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_tofansahoo_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_tofansahoo_dev"} */
+show objects in TASTY_BYTES_DBT_DB.tofansahoo_dev
+    limit 10000
+    
+;
+[0m11:25:10.992308 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.886 seconds
+[0m11:25:10.994048 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart"
+[0m11:25:10.994498 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart"} */
+show objects in TASTY_BYTES_DBT_DB.tofansahoo_dev_data_mart
+    limit 10000
+    
+;
+[0m11:25:11.069872 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.075 seconds
+[0m11:25:11.071703 [debug] [ThreadPool]: Using snowflake connection "list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart"
+[0m11:25:11.072185 [debug] [ThreadPool]: On list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m11:25:11.095505 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c4c911-010a-8387-0003-e3420001610e
+[0m11:25:11.096003 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m11:25:11.096567 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m11:25:11.097011 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m11:25:11.139686 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.067 seconds
+[0m11:25:11.147579 [debug] [Thread-2 (]: Began running node model.tasty_bytes.testmodel
+[0m11:25:11.148306 [info ] [Thread-2 (]: 1 of 1 START sql table model TASTY_BYTES_DBT_DB.tofansahoo_dev_data_mart.testmodel  [RUN]
+[0m11:25:11.149000 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_TASTY_BYTES_DBT_DB_tofansahoo_dev, now model.tasty_bytes.testmodel)
+[0m11:25:11.149537 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.testmodel
+[0m11:25:11.158527 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.testmodel"
+[0m11:25:11.159200 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.testmodel
+[0m11:25:11.190289 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.testmodel"
+[0m11:25:11.191294 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.testmodel"
+[0m11:25:11.191793 [debug] [Thread-2 (]: On model.tasty_bytes.testmodel: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.testmodel"} */
+create or replace transient table TASTY_BYTES_DBT_DB.tofansahoo_dev_data_mart.testmodel
+         as
+        (select 1 as test
+        );
+[0m11:25:11.192289 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:25:12.701349 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.509 seconds
+[0m11:25:12.724365 [info ] [Thread-2 (]: 1 of 1 OK created sql table model TASTY_BYTES_DBT_DB.tofansahoo_dev_data_mart.testmodel  [[32mSUCCESS 1[0m in 1.57s]
+[0m11:25:12.725147 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.testmodel
+[0m11:25:12.728024 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m11:25:12.728576 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.testmodel' was properly closed.
+[0m11:25:12.729018 [debug] [Dummy-1   ]: Connection 'list_TASTY_BYTES_DBT_DB_tofansahoo_dev_data_mart' was properly closed.
+[0m11:25:12.729492 [info ] [Dummy-1   ]: 
+[0m11:25:12.729987 [info ] [Dummy-1   ]: Finished running 1 table model in 0 hours 0 minutes and 3.98 seconds (3.98s).
+[0m11:25:12.730780 [debug] [Dummy-1   ]: Command end result
+[0m11:25:12.764334 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:25:12.766152 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:25:12.771778 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m11:25:12.772233 [info ] [Dummy-1   ]: 
+[0m11:25:12.772814 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m11:25:12.773262 [info ] [Dummy-1   ]: 
+[0m11:25:12.773768 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m11:25:12.775402 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.724141, "process_in_blocks": "0", "process_kernel_time": 0.81, "process_mem_max_rss": "526560", "process_out_blocks": "0", "process_user_time": 5.31}
+[0m11:25:12.776021 [debug] [Dummy-1   ]: Command `cli run` succeeded at 11:25:12.775758 after 6.73 seconds
+[0m11:25:12.776530 [debug] [Dummy-1   ]: Flushing usage events

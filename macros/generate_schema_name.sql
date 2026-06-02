@@ -17,17 +17,24 @@
 
     {# 4. Developer / Snowsight Workspace Isolation Logic #}
     {%- else -%}
+
+        {{ log('inside target dev' ,True) }}
         
         {# Fallback to default schema if user variable isn't captured safely #}
         {%- if user_name is not none and user_name != '' -%}
+
+            {{ log('inside user provided in the profile' ,True) }}
             
             {%- if custom_schema_name is none -%}
-                {{ user_name }}_dev
+                {{ log('inside empty custom schema' ,True) }}            
+                dev_{{ user_name }}
             {%- else -%}
-                {{ user_name }}_dev_{{ custom_schema_name | trim }}
+                {{ log('inside custom schema has value' ,True) }}            
+                dev_{{ user_name }}_{{ custom_schema_name | trim }}
             {%- endif -%}
             
         {%- else -%}
+            {{ log('inside user not provided in the profile' ,True) }}        
             {{ default_schema }}
         {%- endif -%}
 
